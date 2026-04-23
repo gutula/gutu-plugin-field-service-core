@@ -1,0 +1,10 @@
+{
+  "automationId": "field-service-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "field-service.reconciliation.run",
+  "queues": [
+    "dispatch-overdue",
+    "parts-request-backlog",
+    "visit-reconciliation-review"
+  ]
+}

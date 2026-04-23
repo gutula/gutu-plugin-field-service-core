@@ -1,0 +1,9 @@
+{
+  "workflowId": "field-service-lifecycle",
+  "actors": [
+    "dispatcher",
+    "technician",
+    "service-lead"
+  ],
+  "description": "Schedule, dispatch, execute, bill, and reconcile on-site service operations."
+}

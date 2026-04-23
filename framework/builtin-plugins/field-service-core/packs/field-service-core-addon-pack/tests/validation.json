@@ -1,0 +1,24 @@
+{
+  "packageId": "field-service-core",
+  "packName": "field-service-core-addon-pack",
+  "expectedActions": [
+    "field-service.dispatches.schedule",
+    "field-service.visits.start",
+    "field-service.parts.request"
+  ],
+  "expectedResources": [
+    "field-service.dispatches",
+    "field-service.visits",
+    "field-service.parts-requests"
+  ],
+  "expectedReports": [
+    "Dispatch Summary",
+    "Visit Completion",
+    "Parts Consumption Backlog"
+  ],
+  "expectedExceptionQueues": [
+    "dispatch-overdue",
+    "parts-request-backlog",
+    "visit-reconciliation-review"
+  ]
+}

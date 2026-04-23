@@ -1,0 +1,18 @@
+{
+  "pluginId": "field-service-core",
+  "reports": [
+    "Dispatch Summary",
+    "Visit Completion",
+    "Parts Consumption Backlog"
+  ],
+  "exceptionQueues": [
+    "dispatch-overdue",
+    "parts-request-backlog",
+    "visit-reconciliation-review"
+  ],
+  "operationalScenarios": [
+    "dispatch-scheduling",
+    "visit-execution",
+    "parts-request-to-billing"
+  ]
+}

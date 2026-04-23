@@ -1,0 +1,9 @@
+{
+  "workspace": "field-service",
+  "route": "/admin/business/field-service",
+  "pageTitle": "Field Service Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

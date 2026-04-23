@@ -1,0 +1,21 @@
+{
+  "plugin": "field-service-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "support-service-core",
+    "inventory-core",
+    "party-relationships-core",
+    "contracts-core",
+    "traceability-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.field-service",
+    "events.publish.field-service"
+  ]
+}
