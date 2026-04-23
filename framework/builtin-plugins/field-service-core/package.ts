@@ -103,7 +103,11 @@ export default definePackage({
   "publicCommands": [
     "field-service.dispatches.schedule",
     "field-service.visits.start",
-    "field-service.parts.request"
+    "field-service.parts.request",
+    "field-service.dispatches.hold",
+    "field-service.dispatches.release",
+    "field-service.dispatches.amend",
+    "field-service.dispatches.reverse"
   ],
   "publicQueries": [
     "field-service.dispatch-summary",

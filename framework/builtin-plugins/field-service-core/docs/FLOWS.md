@@ -5,6 +5,10 @@
 - `field-service.dispatches.schedule`: Schedule Dispatch
 - `field-service.visits.start`: Start Field Visit
 - `field-service.parts.request`: Request Spare Parts
+- `field-service.dispatches.hold`: Place Record On Hold
+- `field-service.dispatches.release`: Release Record Hold
+- `field-service.dispatches.amend`: Amend Record
+- `field-service.dispatches.reverse`: Reverse Record
 
 ## Operational scenario matrix
 
@@ -69,6 +73,106 @@ Forbidden shortcuts:
 Request Spare Parts
 
 Permission: `field-service.parts-requests.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `field-service.dispatches.hold`
+
+Place Record On Hold
+
+Permission: `field-service.dispatches.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `field-service.dispatches.release`
+
+Release Record Hold
+
+Permission: `field-service.dispatches.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `field-service.dispatches.amend`
+
+Amend Record
+
+Permission: `field-service.dispatches.write`
+
+Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
+
+Preconditions:
+
+- Caller input must satisfy the action schema exported by the plugin.
+- The caller must satisfy the declared permission and any host-level installation constraints.
+- Integration should honor the action’s non-idempotent semantics.
+
+Side effects:
+
+- Mutates or validates state owned by `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests`.
+- May schedule or describe follow-up background work.
+
+Forbidden shortcuts:
+
+- Do not bypass the action contract with undocumented service mutations in application code.
+- Do not document extra hooks, retries, or lifecycle semantics unless they are explicitly exported here.
+
+
+### `field-service.dispatches.reverse`
+
+Reverse Record
+
+Permission: `field-service.dispatches.write`
 
 Business purpose: Expose the plugin’s write boundary through a validated, auditable action contract.
 

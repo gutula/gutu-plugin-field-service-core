@@ -71,6 +71,10 @@ Owns dispatch, visit execution, and parts-request coordination for on-site servi
 | Action | `field-service.dispatches.schedule` | Permission: `field-service.dispatches.write` | Schedule Dispatch<br>Idempotent<br>Audited |
 | Action | `field-service.visits.start` | Permission: `field-service.visits.write` | Start Field Visit<br>Non-idempotent<br>Audited |
 | Action | `field-service.parts.request` | Permission: `field-service.parts-requests.write` | Request Spare Parts<br>Non-idempotent<br>Audited |
+| Action | `field-service.dispatches.hold` | Permission: `field-service.dispatches.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `field-service.dispatches.release` | Permission: `field-service.dispatches.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `field-service.dispatches.amend` | Permission: `field-service.dispatches.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `field-service.dispatches.reverse` | Permission: `field-service.dispatches.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `field-service.dispatches` | Portal disabled | Dispatch and technician assignment records.<br>Purpose: Own dispatch truth separately from tickets, stock, and billing state.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `field-service.visits` | Portal disabled | On-site visit execution and completion records.<br>Purpose: Track field execution as a first-class operational boundary.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `field-service.parts-requests` | Portal disabled | Spare-parts and material requests linked to field work.<br>Purpose: Request downstream inventory handling without mutating stock truth directly.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/field-service-core";
+import { manifest, scheduleDispatchAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/field-service-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  scheduleDispatchAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/field-service-core";
+import { manifest, scheduleDispatchAction } from "@plugins/field-service-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", scheduleDispatchAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `field-service.dispatches.schedule`, `field-service.visits.start`, `field-service.parts.request`.
+- Exports 7 governed actions: `field-service.dispatches.schedule`, `field-service.visits.start`, `field-service.parts.request`, `field-service.dispatches.hold`, `field-service.dispatches.release`, `field-service.dispatches.amend`, `field-service.dispatches.reverse`.
 - Owns 3 resource contracts: `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

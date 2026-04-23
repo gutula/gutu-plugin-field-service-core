@@ -4,7 +4,7 @@
 
 ## Shipped Now
 
-- Exports 3 governed actions: `field-service.dispatches.schedule`, `field-service.visits.start`, `field-service.parts.request`.
+- Exports 7 governed actions: `field-service.dispatches.schedule`, `field-service.visits.start`, `field-service.parts.request`, `field-service.dispatches.hold`, `field-service.dispatches.release`, `field-service.dispatches.amend`, `field-service.dispatches.reverse`.
 - Owns 3 resource contracts: `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -18,7 +18,7 @@
 
 ## Current Gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No additional gaps were identified beyond the plugin’s stated non-goals.
 
 ## Recommended Next
 

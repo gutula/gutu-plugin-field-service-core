@@ -9,6 +9,10 @@
 | field-service.dispatches.schedule | Schedule Dispatch |
 | field-service.visits.start | Start Field Visit |
 | field-service.parts.request | Request Spare Parts |
+| field-service.dispatches.hold | Place Record On Hold |
+| field-service.dispatches.release | Release Record Hold |
+| field-service.dispatches.amend | Amend Record |
+| field-service.dispatches.reverse | Reverse Record |
 | field-service.projections.refresh | Job definition queued on `field-service-projections`. |
 | field-service.reconciliation.run | Job definition queued on `field-service-reconciliation`. |
 | field-service-lifecycle | Schedule, dispatch, execute, bill, and reconcile on-site service operations. |
