@@ -54,6 +54,11 @@ Owns dispatch, visit execution, and parts-request coordination for on-site servi
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `support-service-core`, `inventory-core`, `party-relationships-core`, `contracts-core`, `traceability-core` |
+| Recommended Plugins | None |
+| Capability Enhancing | None |
+| Integration Only | None |
+| Suggested Packs | None |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.field-service`, `events.publish.field-service` |
 | Provides Capabilities | `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests` |
 | Owns Data | `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests`, `field-service.reconciliation` |

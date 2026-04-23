@@ -1,6 +1,27 @@
 {
   "packageId": "field-service-core",
   "packName": "field-service-core-addon-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "support-service-core",
+    "party-relationships-core",
+    "traceability-core"
+  ],
+  "recommendedPlugins": [
+    "contracts-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "inventory-core",
+    "business-portals-core",
+    "maintenance-cmms-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [],
   "expectedActions": [
     "field-service.dispatches.schedule",
     "field-service.visits.start",

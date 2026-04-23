@@ -23,9 +23,7 @@ export default definePackage({
     "audit-core",
     "workflow-core",
     "support-service-core",
-    "inventory-core",
     "party-relationships-core",
-    "contracts-core",
     "traceability-core"
   ],
   "dependencyContracts": [
@@ -60,17 +58,7 @@ export default definePackage({
       "rationale": "Required for Field Service Core to keep its boundary governed and explicit."
     },
     {
-      "packageId": "inventory-core",
-      "class": "required",
-      "rationale": "Required for Field Service Core to keep its boundary governed and explicit."
-    },
-    {
       "packageId": "party-relationships-core",
-      "class": "required",
-      "rationale": "Required for Field Service Core to keep its boundary governed and explicit."
-    },
-    {
-      "packageId": "contracts-core",
       "class": "required",
       "rationale": "Required for Field Service Core to keep its boundary governed and explicit."
     },
@@ -78,9 +66,51 @@ export default definePackage({
       "packageId": "traceability-core",
       "class": "required",
       "rationale": "Required for Field Service Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "contracts-core",
+      "class": "optional",
+      "rationale": "Recommended with Field Service Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "inventory-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Field Service Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Field Service Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "maintenance-cmms-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Field Service Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "analytics-bi-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Field Service Core with deeper downstream automation, visibility, or workflow coverage."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "contracts-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "inventory-core",
+    "business-portals-core",
+    "maintenance-cmms-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [],
+  "standaloneSupported": false,
+  "installNotes": [
+    "Field execution depends on ticketing or entitlement context; install this as an operational extension, not as a first plugin."
+  ],
+  "optionalWith": [
+    "contracts-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "field-service.dispatches",

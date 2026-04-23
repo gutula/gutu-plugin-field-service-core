@@ -36,9 +36,7 @@
     "@plugins/audit-core": "workspace:*",
     "@plugins/workflow-core": "workspace:*",
     "@plugins/support-service-core": "workspace:*",
-    "@plugins/inventory-core": "workspace:*",
     "@plugins/party-relationships-core": "workspace:*",
-    "@plugins/contracts-core": "workspace:*",
     "@plugins/traceability-core": "workspace:*"
   }
 }

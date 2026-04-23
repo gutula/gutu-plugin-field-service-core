@@ -7,11 +7,21 @@
     "audit-core",
     "workflow-core",
     "support-service-core",
-    "inventory-core",
     "party-relationships-core",
-    "contracts-core",
     "traceability-core"
   ],
+  "recommendedPlugins": [
+    "contracts-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "inventory-core",
+    "business-portals-core",
+    "maintenance-cmms-core",
+    "analytics-bi-core"
+  ],
+  "integrationOnlyPlugins": [],
+  "suggestedPacks": [],
+  "standaloneSupported": false,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",
