@@ -195,7 +195,7 @@ Forbidden shortcuts:
 
 ## Cross-package interactions
 
-- Direct dependencies: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `support-service-core`, `inventory-core`, `party-relationships-core`, `contracts-core`, `traceability-core`
+- Direct dependencies: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `support-service-core`, `party-relationships-core`, `traceability-core`
 - Requested capabilities: `ui.register.admin`, `api.rest.mount`, `data.write.field-service`, `events.publish.field-service`
 - Integration model: Actions+Resources+Jobs+Workflows+UI
 - ERPNext doctypes used as parity references: `Issue`, `Maintenance Visit`, `Project`, `Task`

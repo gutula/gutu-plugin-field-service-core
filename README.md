@@ -60,12 +60,12 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Package | `@plugins/field-service-core` |
 | Manifest ID | `field-service-core` |
 | Repo | [gutu-plugin-field-service-core](https://github.com/gutula/gutu-plugin-field-service-core) |
-| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `support-service-core`, `inventory-core`, `party-relationships-core`, `contracts-core`, `traceability-core` |
-| Recommended Plugins | None |
-| Capability Enhancing | None |
+| Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `support-service-core`, `party-relationships-core`, `traceability-core` |
+| Recommended Plugins | `contracts-core` |
+| Capability Enhancing | `inventory-core`, `business-portals-core`, `maintenance-cmms-core`, `analytics-bi-core` |
 | Integration Only | None |
 | Suggested Packs | None |
-| Standalone Supported | Yes |
+| Standalone Supported | No |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.field-service`, `events.publish.field-service` |
 | Provided Capabilities | `field-service.dispatches`, `field-service.visits`, `field-service.parts-requests` |
 | Runtime | bun>=1.3.12 |
@@ -74,13 +74,13 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 ## Installation Guidance
 
-- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `support-service-core`, `inventory-core`, `party-relationships-core`, `contracts-core`, `traceability-core`
-- Recommended plugins: none
-- Capability-enhancing plugins: none
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `support-service-core`, `party-relationships-core`, `traceability-core`
+- Recommended plugins: `contracts-core`
+- Capability-enhancing plugins: `inventory-core`, `business-portals-core`, `maintenance-cmms-core`, `analytics-bi-core`
 - Integration-only plugins: none
 - Suggested packs: none
-- Standalone supported: yes
-
+- Standalone supported: no
+- Field execution depends on ticketing or entitlement context; install this as an operational extension, not as a first plugin.
 
 ## Capability Matrix
 
